@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Montserrat } from 'next/font/google';
 import "./globals.css";
+import Head from "next/head";
 
 
 const bebasNeue = Bebas_Neue({
@@ -23,12 +24,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const jsonLdData = {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Arena del Valle: Noche de Lucha Libre",
+    "startDate": "2025-09-20T20:00",
+    "location": {
+      "@type": "Place",
+      "name": "Arena del Valle",
+      "address": "Ecatepec, México",
+    },
+    "performer": {
+      "@type": "Person",
+      "name": "Penta El Cero Miedo",
+    },
+    "url": "https://arena-del-valle-site.vercel.app",
+  };
+
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${bebasNeue.className} ${montserrat.className} antialiased`}
       >
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+        />
       </body>
     </html>
   );
