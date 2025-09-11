@@ -44,6 +44,12 @@ export default function RootLayout({
 
   return (
     <html lang="es">
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="jKfupuO5iLvmHnRr2M1_cimO3l_qgR4baHyALDohNmc"
+        />
+      </Head>
       <body
         className={`${bebasNeue.className} ${montserrat.className} antialiased`}
       >
