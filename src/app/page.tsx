@@ -1,103 +1,104 @@
+// app/page.tsx
 import Image from "next/image";
+import { Metadata } from "next";
+import Link from "next/link";
+import { Footer } from "@/shared/components/Footer";
+import { Header } from "@/shared/components/Header";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Arena del Valle | De Penta El Cero Miedo",
+  description:
+    "Arena del Valle: el corazón de la lucha libre en México. Vive la emoción, las rivalidades y la pasión de los gladiadores del ring.",
+  keywords: [
+    "lucha libre",
+    "penta",
+    "cero",
+    "miedo",
+    "arena",
+    "ecatepec",
+    "eventos",
+    "luchadores",
+    "México",
+    "Arena del Valle",
+  ],
+  openGraph: {
+    title: "Arena del Valle | De Penta El Cero Miedo",
+    description:
+      "Vive la emoción de la lucha libre como nunca antes en la Arena del Valle.",
+    url: "https://www.arenadelvalle.mx",
+    siteName: "Arena del Valle",
+    images: [
+      {
+        url: "/arena-logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Arena del Valle Logo",
+      },
+    ],
+    locale: "es_MX",
+    type: "website",
+  },
+};
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="bg-black text-white min-h-screen flex flex-col">
+      
+      {/* NAVBAR */}
+      <Header />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      {/* HERO */}
+      <main className="flex-grow container mx-auto text-center py-6 px-6">
+        
+        <section className="mb-8">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-sky-400 font-bebas">
+            Arena del Valle
+          </h1>
+          <h3 className="mb-6">De Penta el Cero Miedo</h3>
+          <Image
+            src={"/arena.jpg"}
+            alt="Vista interior de la Arena del Valle"
+            width={1000}
+            height={800}
+            className="w-full max-w-[800px] m-auto mb-6"
+          />
+          <p className="mx-auto text-lg leading-relaxed text-justify w-full max-w-[800px]">
+            Vive la emoción de la lucha libre como nunca antes. Rivalidades
+            épicas, movimientos espectaculares y la pasión del público hacen de
+            nuestra arena el lugar donde nacen las leyendas.
+          </p>
+          <div className="mt-8">
+            <Link
+              href={"/events"}
+              aria-label="Ver próximos eventos de lucha libre en la Arena del Valle"
+              className="bg-sky-500 text-black px-6 py-3 rounded-xl font-bold hover:bg-white hover:text-black transition-colors"
+            >
+              Ver próximos eventos
+            </Link>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-sky-400 font-bebas mb-6">
+            Historia
+          </h2>
+          <Image
+            src={"/pentagon.webp"}
+            alt="Penta el Cero Miedo, fundador de la Arena del Valle"
+            width={1000}
+            height={800}
+            className="w-full max-w-[800px] m-auto mb-6"
+          />
+          <p className="mx-auto text-lg leading-relaxed text-justify w-full max-w-[800px] mb-4">La Arena del Valle nació como un espacio dedicado a la pasión y al arte de la lucha libre mexicana. Desde sus primeros eventos, se convirtió en el punto de encuentro de familias, aficionados y grandes gladiadores que marcaron época con sus combates.
+          </p>
+          <p className="mx-auto text-lg leading-relaxed text-justify w-full max-w-[800px]">Con el paso de los años, nuestra arena ha sido testigo de rivalidades legendarias, debuts inolvidables y el surgimiento de ídolos que hoy son reconocidos en todo México. Más que un recinto, la Arena del Valle es un símbolo de tradición, entrega y espectáculo.
+          </p>
+
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      {/* FOOTER */}
+      <Footer/>      
     </div>
   );
 }
