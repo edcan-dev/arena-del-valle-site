@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/shared/components/Footer";
-import { Header } from "@/shared/components/Header";
+import { Navbar } from "@/shared/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Arena del Valle | De Penta El Cero Miedo",
@@ -42,63 +42,56 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col">
-      
-      {/* NAVBAR */}
-      <Header />
+    <>
+      <Navbar />
 
-      {/* HERO */}
-      <main className="flex-grow container mx-auto text-center py-6 px-6">
-        
-        <section className="mb-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-sky-400 font-bebas">
-            Arena del Valle
-          </h1>
-          <h3 className="mb-6">De Penta el Cero Miedo</h3>
+      <main className="flex-1 font-text">
+        <section
+          className="relative flex flex-col items-center justify-center text-center py-8 px-8 h-[calc(100svh-80px)]"
+        >
+
+          <div 
+            className="absolute -z-10 inset-0 bg-cover bg-center opacity-10 bg-[url('/arena.jpg')]"
+          ></div>
+
           <Image
-            src={"/arena.jpg"}
-            alt="Vista interior de la Arena del Valle"
-            width={1000}
-            height={800}
-            className="w-full max-w-[800px] m-auto mb-6"
-          />
-          <p className="mx-auto text-lg leading-relaxed text-justify w-full max-w-[800px]">
+            src="/arena-logo.png"
+            alt="Logo Arena del Valle"
+            width={250}
+            height={250}
+            className="mb-8"
+            priority
+          />          
+
+          <p className="text-xl text-gray-300 max-w-2xl mb-4 text-center">
+            Entrena, pelea y vive la pasión de la lucha libre junto a
+            <span className="text-sky-400 font-bold"> Penta El Zero Miedo</span>.
+          </p>
+
+          <p className="text-xl text-gray-300 max-w-2xl mb-8 text-center">
             Vive la emoción de la lucha libre como nunca antes. Rivalidades
             épicas, movimientos espectaculares y la pasión del público hacen de
             nuestra arena el lugar donde nacen las leyendas.
           </p>
-          <div className="mt-8">
-            <Link
-              href={"/events"}
-              aria-label="Ver próximos eventos de lucha libre en la Arena del Valle"
-              className="bg-sky-500 text-black px-6 py-3 rounded-xl font-bold hover:bg-white hover:text-black transition-colors"
-            >
-              Ver próximos eventos
-            </Link>
-          </div>
+
+          <Link
+            href="/classes"
+            className="px-8 py-4 bg-sky-500 hover:bg-sky-600 text-white text-2xl font-title rounded-xl uppercase tracking-wider transition"
+          >
+            Conoce nuestras clases
+          </Link>
         </section>
 
-        <section>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-sky-400 font-bebas mb-6">
-            Historia
-          </h2>
-          <Image
-            src={"/pentagon.webp"}
-            alt="Penta el Cero Miedo, fundador de la Arena del Valle"
-            width={1000}
-            height={800}
-            className="w-full max-w-[800px] m-auto mb-6"
-          />
-          <p className="mx-auto text-lg leading-relaxed text-justify w-full max-w-[800px] mb-4">La Arena del Valle nació como un espacio dedicado a la pasión y al arte de la lucha libre mexicana. Desde sus primeros eventos, se convirtió en el punto de encuentro de familias, aficionados y grandes gladiadores que marcaron época con sus combates.
-          </p>
-          <p className="mx-auto text-lg leading-relaxed text-justify w-full max-w-[800px]">Con el paso de los años, nuestra arena ha sido testigo de rivalidades legendarias, debuts inolvidables y el surgimiento de ídolos que hoy son reconocidos en todo México. Más que un recinto, la Arena del Valle es un símbolo de tradición, entrega y espectáculo.
-          </p>
 
+        <section
+          className="bg-gray-800 flex h-[calc(100svh-80px)] p-6"
+        >
+          HOLA HOLA HOLA
         </section>
+        
       </main>
 
-      {/* FOOTER */}
-      <Footer/>      
-    </div>
+      <Footer />
+    </>
   );
 }
