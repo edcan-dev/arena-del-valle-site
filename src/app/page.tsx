@@ -3,7 +3,8 @@ import Image from "next/image";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/shared/components/Footer";
-import { Navbar } from "@/shared/components/Navbar";
+import { Header } from "@/shared/components/Header";
+import BlinkingDownArrow from "@/shared/components/BlinkingDownArrow";
 
 export const metadata: Metadata = {
   title: "Arena del Valle | De Penta El Cero Miedo",
@@ -43,29 +44,33 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <Navbar />
+      <Header />
 
       <main className="flex-1 font-text">
-        <section
-          className="relative flex flex-col items-center justify-center text-center py-8 px-8 h-[calc(100svh-80px)]"
-        >
+        <section className="relative flex flex-col items-center justify-between text-center py-8 px-8 h-[calc(100svh-80px)]">
 
-          <div 
-            className="absolute -z-10 inset-0 bg-cover bg-center opacity-10 bg-[url('/arena.jpg')]"
-          ></div>
+          <div
+            className="absolute inset-0 -z-10 bg-center bg-cover bg-no-repeat opacity-10"
+            style={{
+              backgroundImage: "url('/arena.jpg')",
+              backgroundAttachment: "fixed", // efecto sutil tipo parallax
+            }}
+            aria-hidden="true"
+          />
 
           <Image
             src="/arena-logo.png"
             alt="Logo Arena del Valle"
             width={250}
             height={250}
-            className="mb-8"
+            className="mb-8 "
             priority
-          />          
+          />
 
-          <p className="text-xl text-gray-300 max-w-2xl mb-4 text-center">
-            Entrena, pelea y vive la pasión de la lucha libre junto a
-            <span className="text-sky-400 font-bold"> Penta El Zero Miedo</span>.
+          <p className="text-xl text-gray-300 max-w-2xl mb-4 text-center ">
+            Entrena, pelea y vive la pasión de la lucha libre en la arena de
+            <span className="text-sky-400 font-bold"> Penta El Zero Miedo</span>
+            .
           </p>
 
           <p className="text-xl text-gray-300 max-w-2xl mb-8 text-center">
@@ -76,19 +81,22 @@ export default function HomePage() {
 
           <Link
             href="/classes"
-            className="px-8 py-4 bg-sky-500 hover:bg-sky-600 text-white text-2xl font-title rounded-xl uppercase tracking-wider transition"
+            className="px-8 py-4 bg-sky-500 hover:bg-sky-600 text-white text-2xl font-title rounded-xl uppercase tracking-wider transition mb-8"
           >
             Conoce nuestras clases
           </Link>
+
+          <BlinkingDownArrow
+            blink={true}
+            bounce={true}
+            size={100}
+            className="text-gray-300 animate-bounce"
+          />
         </section>
 
-
-        <section
-          className="bg-gray-800 flex h-[calc(100svh-80px)] p-6"
-        >
+        <section className="bg-gray-800 flex h-[calc(100svh-80px)] p-6">
           HOLA HOLA HOLA
         </section>
-        
       </main>
 
       <Footer />

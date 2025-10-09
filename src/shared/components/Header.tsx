@@ -1,61 +1,39 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+"use client";
+
+import Image from "next/image";
+import { Navbar } from "./Navbar";
 
 export const Header = () => {
   return (
-    <header className="bg-gray-900">
-        <nav
-          aria-label="Menú principal"
-          className="container mx-auto flex justify-between items-center py-4 px-6"
-        >
-          <Link href={"/"} className="flex items-center gap-3">
-            <Image
-              src="/arena-logo.png"
-              alt="Arena del Valle Logo"
-              width={100}
-              height={100}
-            />
-            {/* <span className="text-xl font-bold">Arena del Valle</span> */}
-          </Link>
-          <ul role="list" className="flex gap-6">
-            <li>
-              <Link
-                href={"/classes"}
-                aria-label="Ver los horarios de las clases en la Arena"
-                className="hover:text-sky-400 transition-colors font-semibold"
-              >
-                Clases
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"/events"}
-                aria-label="Ver próximos eventos de lucha libre en la Arena del Valle"
-                className="hover:text-sky-400 transition-colors font-semibold"
-              >
-                Eventos
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"/wrestlers"}
-                aria-label="Ver los luchadores más famosos de la Arena"
-                className="hover:text-sky-400 transition-colors font-semibold"
-              >
-                Luchadores
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"/contact"}
-                className="hover:text-sky-400 transition-colors font-semibold"
-              >
-                Contacto
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-  )
-}
+    <header className="text-white border-b border-gray-800 shadow-md w-full sticky top-0 left-0 z-50 flex items-center justify-between px-4 h-[80px] bg-gray-900">
+
+      <Navbar/>
+
+      <Image
+        src="/arena-logo.png"
+        alt="Arena del Valle Logo"
+        width={50}
+        height={50}
+        priority
+      />
+      {/* <h1 className="text-4xl font-title text-gray-300 flex">ARENA DEL VALLE</h1> */}
+
+      {/* <ul className="flex space-x-6 font-text text-lg font-medium">
+          <li>            <Link href="/" className="hover:text-sky-400 transition">Inicio</Link>
+          </li>
+          <li>
+            <Link href="/about" className="hover:text-sky-400 transition">Nosotros</Link>
+          </li>
+          <li>
+            <Link href="/classes" className="hover:text-sky-400 transition">Clases</Link>
+          </li>
+          <li>
+            <Link href="/events" className="hover:text-sky-400 transition">Eventos</Link>
+          </li>
+          <li>
+            <Link href="/contact" className="hover:text-sky-400 transition">Contacto</Link>
+          </li>
+        </ul> */}
+    </header>
+  );
+};

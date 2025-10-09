@@ -9,8 +9,8 @@ const bebasNeue = Bebas_Neue({
   variable: "--font-title",
 });
 
-const montserrat = Lato({
-  weight: '400',
+const lato = Lato({
+  weight: ["400", "700"],
   subsets: ['latin'],
   variable: "--font-text",
 });
@@ -39,7 +39,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="es" className={`${bebasNeue.variable} ${montserrat.variable}`}>
+    <html lang="es" className={`${bebasNeue.variable} ${lato.variable}`}>
       <Head>
         <meta
           name="google-site-verification"
