@@ -28,34 +28,40 @@ export const Navbar = () => {
       >
 
         <nav 
-          className="flex w-3/4 h-full bg-gray-900 border-r border-gray-800 p-6"
+          className="flex w-3/4 h-full bg-gray-900 border-r border-gray-800"
           onClick={(e) => e.stopPropagation()}
         >
 
-          <ul className="flex flex-col font-text text-xl font-bold">
-            <li>
-              {" "}
-              <Link href="/" className="hover:text-sky-400 transition">
+          <ul className="flex flex-col font-text text-xl w-full cursor-pointer">
+            <li className="flex">
+              <Link 
+                href="/" 
+                className="hover:text-sky-400 transition p-6 w-full border-b border-gray-800"
+              >
                 Inicio
               </Link>
             </li>
-            <li>
-              <Link href="/about" className="hover:text-sky-400 transition">
-                Nosotros
-              </Link>
-            </li>
-            <li>
-              <Link href="/classes" className="hover:text-sky-400 transition">
+            <li className="flex">
+              <Link 
+                href="/classes" 
+                className="hover:text-sky-400 transition p-6 w-full border-b border-gray-800"
+              >
                 Clases
               </Link>
             </li>
-            <li>
-              <Link href="/events" className="hover:text-sky-400 transition">
-                Funciones
+            <li className="flex">
+              <Link 
+                href="/events" 
+                className="hover:text-sky-400 transition p-6 w-full border-b border-gray-800"
+              >
+                Eventos
               </Link>
             </li>
-            <li>
-              <Link href="/contact" className="hover:text-sky-400 transition">
+            <li className="flex">
+              <Link 
+                href="/contact" 
+                className="hover:text-sky-400 transition p-6 w-full border-b border-gray-800"
+              >
                 Contacto
               </Link>
             </li>

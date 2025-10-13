@@ -1,6 +1,7 @@
 import { Bebas_Neue, Lato } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
+import { Header } from "@/shared/components/Header";
 
 
 const bebasNeue = Bebas_Neue({
@@ -47,6 +48,7 @@ export default function RootLayout({
         />
       </Head>
       <body className="bg-gray-950 text-white flex flex-col min-h-screen font-text relative">
+        <Header />
         {children}
         <script
           type="application/ld+json"
