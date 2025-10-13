@@ -37,6 +37,7 @@ export const Navbar = () => {
               <Link 
                 href="/" 
                 className="hover:text-sky-400 transition p-6 w-full border-b border-gray-800"
+                onClick={() => setisSidebarOpen(false)}
               >
                 Inicio
               </Link>
@@ -45,6 +46,7 @@ export const Navbar = () => {
               <Link 
                 href="/classes" 
                 className="hover:text-sky-400 transition p-6 w-full border-b border-gray-800"
+                onClick={() => setisSidebarOpen(false)}
               >
                 Clases
               </Link>
@@ -53,6 +55,7 @@ export const Navbar = () => {
               <Link 
                 href="/events" 
                 className="hover:text-sky-400 transition p-6 w-full border-b border-gray-800"
+                onClick={() => setisSidebarOpen(false)}
               >
                 Eventos
               </Link>
@@ -61,6 +64,7 @@ export const Navbar = () => {
               <Link 
                 href="/contact" 
                 className="hover:text-sky-400 transition p-6 w-full border-b border-gray-800"
+                onClick={() => setisSidebarOpen(false)}
               >
                 Contacto
               </Link>

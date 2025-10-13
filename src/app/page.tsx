@@ -46,7 +46,7 @@ export default function HomePage() {
     <>
 
       <main className="flex-1 font-text">
-        <section className="relative flex flex-col items-center justify-between text-center py-8 px-8 h-full min-h-[calc(100svh-80px)]">
+        <section className="relative flex flex-col items-center justify-between text-center py-8 px-8 min-h-[calc(100svh-80px)]">
           <div
             className="absolute inset-0 -z-10 bg-center bg-cover bg-no-repeat opacity-10"
             style={{
@@ -59,9 +59,9 @@ export default function HomePage() {
           <Image
             src="/arena-logo.png"
             alt="Logo Arena del Valle"
-            width={250}
-            height={250}
-            className="mb-8"
+            width={400}
+            height={400}
+            className="mb-8 w-full"
             priority
           />
 
@@ -71,11 +71,11 @@ export default function HomePage() {
             .
           </p>
 
-          <p className="text-xl text-gray-300 max-w-2xl text-center mb-4">
+          {/* <p className="text-xl text-gray-300 max-w-2xl text-center mb-4">
             Vive la emoción de la lucha libre como nunca antes. Rivalidades
             épicas, movimientos espectaculares y la pasión del público hacen de
             nuestra arena el lugar donde nacen las leyendas.
-          </p>
+          </p> */}
 
           <Link
             href="/classes"
@@ -92,28 +92,29 @@ export default function HomePage() {
           />
         </section>
 
-        <section className="bg-gray-950 flex flex-col max-w-4xl mx-auto p-8 space-y-6">
+        <section className="bg-gray-950 flex flex-col mx-auto p-8 min-h-[calc(100svh-80px)]">
           
           <h2 className="text-5xl font-bold text-sky-400 uppercase mb-8">
             Nuestra Historia
           </h2>
 
-          <p className="text-lg font-inter text-gray-300 leading-relaxed">
+          <p className="text-lg font-inter text-gray-300 leading-relaxed mb-4">
             Fundada por el legendario luchador{" "}
             <strong>Penta El Zero Miedo</strong>, la Arena del Valle es más que
             un gimnasio: es un templo del esfuerzo, la disciplina y el honor del
             ring.
           </p>
-          <p className="text-lg font-inter text-gray-300 leading-relaxed">
+          <p className="text-lg font-inter text-gray-300 leading-relaxed mb-4">
             Aquí se forman luchadores desde cero hasta el nivel profesional,
-            combinando técnica, fortaleza física y mentalidad de acero. ¡El
-            miedo no tiene cabida en este ring!
+            combinando técnica, fortaleza física y mentalidad de acero.
           </p>
 
-          <Image src={'/unnamed.webp'}
-          alt="Logotipo de la Arena del Valle"
-          width={600}
-          height={400}
+          <Image 
+            src={'/unnamed.webp'}
+            alt="Logotipo de la Arena del Valle"
+            width={400}
+            height={400}
+            className="w-full aspect-square object-cover"
           />
 
         </section>
