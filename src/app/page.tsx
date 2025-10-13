@@ -46,7 +46,7 @@ export default function HomePage() {
     <>
 
       <main className="flex-1 font-text">
-        <section className="relative flex flex-col items-center justify-between text-center py-8 px-8 h-[calc(100svh-80px)]">
+        <section className="relative flex flex-col items-center justify-between text-center py-8 px-8 h-full min-h-[calc(100svh-80px)]">
           <div
             className="absolute inset-0 -z-10 bg-center bg-cover bg-no-repeat opacity-10"
             style={{
@@ -61,17 +61,17 @@ export default function HomePage() {
             alt="Logo Arena del Valle"
             width={250}
             height={250}
-            className=""
+            className="mb-8"
             priority
           />
 
-          <p className="text-xl text-gray-300 max-w-2xl text-center">
+          <p className="text-xl text-gray-300 max-w-2xl text-center mb-4">
             Entrena, pelea y vive la pasión de la lucha libre en la arena de
             <span className="text-sky-400 font-bold"> Penta El Zero Miedo</span>
             .
           </p>
 
-          <p className="text-xl text-gray-300 max-w-2xl text-center">
+          <p className="text-xl text-gray-300 max-w-2xl text-center mb-4">
             Vive la emoción de la lucha libre como nunca antes. Rivalidades
             épicas, movimientos espectaculares y la pasión del público hacen de
             nuestra arena el lugar donde nacen las leyendas.
@@ -79,7 +79,7 @@ export default function HomePage() {
 
           <Link
             href="/classes"
-            className="px-8 py-4 bg-sky-500 hover:bg-sky-600 text-white text-2xl  rounded-xl uppercase tracking-wider transition"
+            className="px-8 py-4 bg-sky-500 hover:bg-sky-600 text-white text-2xl  rounded-xl uppercase tracking-wider transition mb-4"
           >
             Conoce nuestras clases
           </Link>
